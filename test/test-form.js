@@ -7,7 +7,7 @@ const should = chai.should();
 import Form from '../js/components/form';
 
 describe('Form component', function(){
-	it('renders a query-input form', function(){
+	it('Renders a query-input form', function(){
 
 		const renderer = TestUtils.createRenderer();
 		renderer.render(<Form />);

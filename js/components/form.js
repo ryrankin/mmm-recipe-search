@@ -1,4 +1,6 @@
 import React from 'react';
+import 'react-bootstrap';
+	
 import Header from './header';
 import Search from './search';
 import Favorites from './favorites';
@@ -7,15 +9,15 @@ import RecipeList from './recipeList';
 //import SearchList from './search-list';
 
 export default class Form extends React.Component{
-	constructor(props){
-	super(props);
-	this.state = {
-		enteredText : '',
+		constructor(props){
+			super(props);
+				this.state = {
+					enteredText : '',
 
 	};
 
-	this.onArtistNameInput = this.onArtistNameInput.bind(this);
-	this.onAddSubmit = this.onAddSubmit.bind(this);
+			this.onArtistNameInput = this.onArtistNameInput.bind(this);
+			this.onAddSubmit = this.onAddSubmit.bind(this);
 }
 
 onArtistNameInput(e){

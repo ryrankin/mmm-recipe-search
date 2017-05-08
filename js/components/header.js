@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import Navbar from './navbar';
 
-export default function Header(props){
+export default function Header(){
 	return(
 	<div style={{display:'-webkit-inline-box'}} className='log-nav' id="transparent">
 			<div>

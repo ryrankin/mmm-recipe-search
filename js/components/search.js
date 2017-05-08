@@ -1,8 +1,10 @@
 import React from 'react';
+import 'react-bootstrap';
+
 
 export default function Search(props){
 	return(
-		<div className='log-nav'>
+		<div className='form-div col-md-12'>
 			<div>
 				<h4 className='name'>Search</h4>
 			</div>
@@ -12,4 +14,5 @@ export default function Search(props){
 				</form>
 		</div>
 	)
+	
 }

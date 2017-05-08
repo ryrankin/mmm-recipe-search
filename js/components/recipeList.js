@@ -7,6 +7,7 @@ export default function RecipeList(){
 
 			</ul>
 			<p>Here are possible results for that recipe</p>
+				<img id="pic" src='/assets/images/stock.png' />
 		</div>
 		)
 }
