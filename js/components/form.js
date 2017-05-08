@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './header';
 import Search from './search';
+import Favorites from './favorites';
+import RecipeList from './recipeList';
 //import Navbar from './navbar';
 //import SearchList from './search-list';
 
@@ -37,12 +39,12 @@ onAddSubmit(e){
 	render(props){
 		return(
 			<div className='form-div col-md-12'>
-			<Header />
-				<Search />
-				<form className='form-inline formDiv col-md-8' onSubmit={this.onAddSubmit}>
-					<input className='form-control col-md-8' type='text' name='artist' placeholder='Search Recipe' ref={ref => this.onArtistNameInput = ref} />
-					<input className='btn btn-default' type='submit' onSubmit={this.onAddSubmit} onClick={this.onArtistNameInput} />
-				</form>
+				<Header />
+					<Search />
+						<RecipeList />
+							<Favorites />
+
+
 			</div>
 		)
 	}

@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import Navbar from './navbar';
-import Search from './search';
 
 export default function Header(props){
 	return(
-	<div style={{display:'-webkit-inline-box'}} className='log-nav'>
-		<div style={{display: "-webkit-inline-box"}}>
+	<div style={{display:'-webkit-inline-box'}} className='log-nav' id="transparent">
 			<div>
 				<h1>Recipe search</h1>
 			</div>
-			<div>
+			<div className='nav-link'>
 				<a href="/search">Search</a>
 			</div>
-			<div>
+			<div className='nav-link'>
 				<a href="/favorites">Favorites</a>
 			</div>
-		</div>
+			<div className='nav-link'>
+				<a href="/login">Login</a>
+			</div>
 	</div>
 	)
 }

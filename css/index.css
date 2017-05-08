@@ -1,17 +1,33 @@
 html{
 	height: 100%;
+	background: url("../assets/images/background.png") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #fff;
+  	margin: 0;
+  	padding: 0;
+  	font-family: sans-serif;
+  	background-color: #fff;
+}
+#transparent{
+	background: url("../assets/images/transparent.png");
+	border-radius: 0.5rem;
+	color: #F0FFFF;
 }
 .form-div{
-	padding-top: 50px;
+	padding-top: 40px;
+}
+form{
+	width: 75%;
 }
 .link-div{
 	width: 25%;
+}
+.log-nav{
+	padding: 5px;
 }
 .link-div div{
 	list-style: none;
@@ -28,4 +44,55 @@ body {
 	font-family: 'Lato', sans-serif;
     font-weight: 600;
     letter-spacing: 0.3em;
+    color: #F0FFFF;
+}
+.link-div{
+	display: -webkit-inline-box
+}
+.search{
+	width: 100%;
+}
+.nav-link{
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 10px;
+	margin-top: 27px;
+	color: #F0FFFF;
+}
+.favorites-container>.delete-favorites img{
+	height: 14px;
+	width: 14px;
+	display: inline-block;
+}
+.favorites-container> h5{
+	color: #F0FFFF;
+	position: relative;
+	text-align: center;
+
+}
+.favorites-container{
+	position: absolute;
+	right: 10px;
+	padding-left: 30px;
+    width: 220px;
+    text-align: left;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+}
+.recipe-list{
+	padding-top: 20px;
+	margin-bottom: 20px;
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+	left: 320px;
+	text-align: center;
+	border: 1px solid black;
+	width: 500px;
+	height: 500px;
+
+}
+
 }

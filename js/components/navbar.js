@@ -1,11 +1,11 @@
 import React from 'react';
-import Seach from './search';
+import Search from './search';
 import { Link } from 'react-router';
 
 export default function Navbar(props){
 	return(
 		<div style={{display:'-webkit-inline-box'}} className='log-nav'>
-		<Nav />
+		<Search />
 			<div style={{display:'-webkit-inline-box'}}>
 				<div style={{display:'-webkit-inline-box'}}>
 					<h4 className='name'>Recipe Search :</h4>
