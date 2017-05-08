@@ -1,0 +1,31 @@
+html{
+	height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #fff;
+}
+.form-div{
+	padding-top: 50px;
+}
+.link-div{
+	width: 25%;
+}
+.link-div div{
+	list-style: none;
+	margin-left: 6rem;
+    letter-spacing: .1rem;
+    width: 10rem;
+}
+.link-div>div>a{
+	font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.name{
+	font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+}
