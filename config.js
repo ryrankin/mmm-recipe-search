@@ -1,12 +1,12 @@
-exports.DATABASE_URL = 'mongodb://ryrankin:Mn7u5g5a223@ds129651.mlab.com:29651/music-tab' ||
+exports.DATABASE_URL = 'mongodb://admin:password@ds159517.mlab.com:59517/yummly-capstone' ||
 				process.env.DATABASE_URL || 
 				global.DATABASE_URL ||
-				'mongodb://localhost/music-tab';
+				'mongodb://localhost/yummly-capstone';
 
 exports.TEST_DATABASE_URL = (
-	'mongodb://ryrankin:Mn7u5g5a223@ds129651.mlab.com:29651/music-tab' ||
+	'mongodb://admin:password@ds159517.mlab.com:59517/yummly-capstone' ||
 	process.env.TEST_DATABASE_URL || 
-	'mongodb://localhost/test-music-tab'
+	'mongodb://localhost/yummly-capstone'
 	);
 
 exports.PORT = process.env.PORT || 8080;
