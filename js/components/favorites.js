@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import RECIPES from '../recipes'
 
 export default function Favorites(props){
 	return(
@@ -9,12 +10,12 @@ export default function Favorites(props){
 					<img src="/assets/images/remove-icon.png" />
 				</button>
 			</div>
-				<h5>Your Favorites</h5>
+				<h4 className='favorites-title'>Your Favorites</h4>
 					<ul>
-						<li><a href="#">Mac and Cheese</a></li>
-						<li><a href="#">Country Fried Steak</a></li>
-						<li><a href="#">Hot Pot</a></li>
-						<li><a href="#">Yellow Duck Curry</a></li>
+						<li><a href="#/recipes/0">Mac and Cheese</a></li>
+						<li><a href="#/recipes/1">Country Fried Steak</a></li>
+						<li><a href="#/recipes/2">Hot Pot</a></li>
+						<li><a href="#/recipes/3">Yellow Duck Curry</a></li>
 
 					</ul>
 		</div>

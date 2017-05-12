@@ -11,6 +11,8 @@ app.use(express.static('build'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+
 let server;
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT){
