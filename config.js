@@ -3,10 +3,4 @@ exports.DATABASE_URL = 'mongodb://admin:password@ds159517.mlab.com:59517/yummly-
 				global.DATABASE_URL ||
 				'mongodb://localhost/yummly-capstone';
 
-exports.TEST_DATABASE_URL = (
-	'mongodb://admin:password@ds159517.mlab.com:59517/yummly-capstone' ||
-	process.env.TEST_DATABASE_URL || 
-	'mongodb://localhost/yummly-capstone'
-	);
-
 exports.PORT = process.env.PORT || 8080;

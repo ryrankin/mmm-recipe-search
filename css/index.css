@@ -110,12 +110,12 @@ h1{
 }
 .recipe-list{
 	padding-top: 40px;
+	background-color: green;
 	margin-bottom: 20px;
 	margin-top: 200px;
 	display: inline-block;
 	position: absolute;
-	right: 50px;
-	left: 350px;
+	right: 180px;
 	text-align: center;
 	border: 1px solid black;
 	width: 500px;

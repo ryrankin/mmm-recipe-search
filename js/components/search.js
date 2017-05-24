@@ -12,7 +12,21 @@ export default class Search extends React.Component{
 
 	this.onAddSubmit = this.onAddSubmit.bind(this);
 	this.onAddInputChanged = this.onAddInputChanged.bind(this);
-}
+	this.searchRecipe = this.searchRecipe.bind(this);
+	this.storeRecipe = this.storeRecipe.bind(this);
+	}
+	searchRecipe(e){
+		e.preventDefault();
+		const recipe = e.target.recipe.value;
+		this.props.dispatch(actions.getRecipe(recipe))
+	}
+	storeRecipe(e){
+		const recipe = e.target.className;
+		this.props.dispatch(actions.storeRecipe(recipe))
+	}
+	componentWillUnmount(){
+		this.props.state.searchReducer = {};
+	}
 
 	onAddInputChanged(e){
 		console.log('onAddInputChanged', e.target.value);

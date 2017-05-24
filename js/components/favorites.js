@@ -12,10 +12,7 @@ export default function Favorites(props){
 			</div>
 				<h4 className='favorites-title'>Your Favorites</h4>
 					<ul>
-						<li><a href="#/recipes/0">Mac and Cheese</a></li>
-						<li><a href="#/recipes/1">Country Fried Steak</a></li>
-						<li><a href="#/recipes/2">Hot Pot</a></li>
-						<li><a href="#/recipes/3">Yellow Duck Curry</a></li>
+						
 
 					</ul>
 		</div>
