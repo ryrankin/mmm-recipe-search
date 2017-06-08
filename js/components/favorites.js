@@ -10,11 +10,10 @@ export default function Favorites(props){
 					<img src="/assets/images/remove-icon.png" />
 				</button>
 			</div>
-				<h4 className='favorites-title'>Your Favorites</h4>
-					<ul>
-						
-
-					</ul>
+			<h4 className='favorites-title'>Your Favorites</h4>
+				<ul>
+					
+				</ul>
 		</div>
 		)
 }

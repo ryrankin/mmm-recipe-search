@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const RecipeModel = require('./models/recipe-model');
 
 const {DATABASE_URL, PORT} = require('./config');
-const {Recipe} = require('./models/recipe-model');
+const {Recipes} = require('./models/recipe-model');
 
 app.use(bodyParser.json());
 app.use(morgan('common'));
@@ -48,7 +48,7 @@ const getRecipes = function(keyword, args){
 	return emitter;
 }
 
-app.get('/recipe/:keyword', function(req, res){
+app.get('/recipes/:keyword', function(req, res){
 	if(req.params.keyword == ''){
 		res.json('Specify a search');
 	}

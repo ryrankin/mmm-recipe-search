@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';	
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
-import store from './store';
+import store from './store'; 
 
 import Favorites from './components/favorites';
 import Search from './components/search';
@@ -11,6 +11,7 @@ import Recipe from './components/recipe';
 import App from './components/app';
 
 const routes = (
+	<Provider store={store}>
 	<Router history={hashHistory}>
 		<Route path='/' component={App}>
 			<IndexRoute component={Search} />
@@ -18,6 +19,7 @@ const routes = (
 			<Route path='favorites' component={Favorites} />
 		</Route>
 	</Router>
+	</Provider>
 	);
 
 document.addEventListener('DOMContentLoaded', () =>

@@ -1,4 +1,5 @@
 import * as actions from '../actions/index';
+import store from '../store';
 
 const initialRecipeState = [];
 
@@ -6,7 +7,7 @@ export const recipeReducer = (state=initialRecipeState, action) => {
 	if(action.type === actions.ADD_RECIPE){
 		return [...state, {
 			name: action.recipe,
-			null
+			rating: null
 		}];
 	}
 	else if (action.type === action.RATE_RECIPE){
@@ -23,6 +24,6 @@ export const recipeReducer = (state=initialRecipeState, action) => {
 		const newRecipe = Object.assign({}, state[index], {rating: action.rating});
 		return [...before, newRecipe, ...after];
 	}
-	
+
 	return state;
 };
