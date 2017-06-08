@@ -1,27 +1,36 @@
 //load resources
 const express = require('express');
 const bodyParser = require('body-parser');
-const events = require('events');
-const {getApi} = require('./api');
 
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const RecipeModel = require('./models/recipe-model');
 
-const unirest = require('unirest');
 const {DATABASE_URL, PORT} = require('./config');
 const {Recipe} = require('./models/recipe-model');
 
-
 app.use(bodyParser.json());
+app.use(morgan('common'));
 app.use(express.static('build'));
-app.use(bodyParser.urlencoded({ 
-	extended: true 
-}));
+mongoose.Promise = global.Promise;
 
 //initialize app
 const app = express();
 
+app.get('/recipes', (req, res) => {
+	Recipes
+	.find()
+	.exec()
+	.then(recipes => {
+		res.json(recipes.map(recipe => recipe.apiRepr()));
+	})
+
+	.catch(
+		err => {
+			console.error(err);
+			res.status(500).json({error: 'Internal server error'});
+		});
+	});
 
 //API call
 const getRecipes = function(keyword, args){
@@ -78,22 +87,10 @@ app.delete('/delete-favorites', function(req, res){
 		res.status(200).json(items);
 	});
 });
-/*
-function runServer(callback){
-	mongoose.connect(DATABASE_URL, function(err){
-		if(err && callback){
-			return callback(err);
-		}
 
-		app.listen(PORT, function(){
-			console.log('Listening on port ' + PORT);
-			if(callback){
-				callback();
-			}
-		});
-	});
-};
-*/
+app.use('*', function(req, res){
+	res.status(404).json({message: 'Not found'});
+});
 
 let server; 
 

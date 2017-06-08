@@ -1,7 +1,9 @@
 require('babel-polyfill');
 import React from 'react';
-import ReactDOM from 'react-dom';	
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';	
 import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import store from './store';
 
 import Favorites from './components/favorites';
 import Search from './components/search';

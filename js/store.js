@@ -1,5 +1,5 @@
 import {createStore, applyMiddleWare} from 'redux';
-import {reducer as formReducer} from 'redux-form';
 import think from 'redux-thunk';
+import * as reducers from './reducers/index';
 
-import searchReducer from './js/reducers/search/index';
+export default createStore(reducers.recipeReducer, applyMiddleWare(thunk));

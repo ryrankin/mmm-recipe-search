@@ -4,8 +4,8 @@ const recipeSchema = new mongoose.Schema({
 	image: {type: String, required: true},
 	name: {type: String, required: true},
 	ingredients: {type: Array, required: true},
-
 });
+recipeSchema.index({index: 'text'});
 
 recipeSchema.methods.apiRepr = function(){
 	return {
@@ -17,5 +17,6 @@ recipeSchema.methods.apiRepr = function(){
 	};
 }
 
-const RecipeModel = mongoose.model('RecipeModel', recipeSchema);
-module.exports = {Recipe};
+const Recipes = mongoose.model('Recipes', recipeSchema);
+
+module.exports = {Recipes};

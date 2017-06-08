@@ -1,5 +1,7 @@
 import React from 'react';
-//import 'react-bootstrap';
+import {connect} from 'react-redux';
+
+import * as actions from '../actions/index';
 
 
 export default class Search extends React.Component{
@@ -9,23 +11,22 @@ export default class Search extends React.Component{
 			enteredText: '',
 			recipeList: [] 
 		};
-
 	this.onAddSubmit = this.onAddSubmit.bind(this);
 	this.onAddInputChanged = this.onAddInputChanged.bind(this);
 	this.searchRecipe = this.searchRecipe.bind(this);
-	this.storeRecipe = this.storeRecipe.bind(this);
 	}
+
+	componentDidMount(){
+	console.log(this.props.recipe);
+		this.props.dispatch(
+			actions.fetchSearch(this.props.recipe)
+			);
+		}
+
 	searchRecipe(e){
 		e.preventDefault();
 		const recipe = e.target.recipe.value;
 		this.props.dispatch(actions.getRecipe(recipe))
-	}
-	storeRecipe(e){
-		const recipe = e.target.className;
-		this.props.dispatch(actions.storeRecipe(recipe))
-	}
-	componentWillUnmount(){
-		this.props.state.searchReducer = {};
 	}
 
 	onAddInputChanged(e){
@@ -50,15 +51,16 @@ export default class Search extends React.Component{
 	render(){
 		return(
 		<div className='form-div col-md-12' id='search'>
+			{this.props.recipe}
 			<form className='form-inline formDiv col-md-8'>
-				<input className='form-control col-md-8' id='search-box' type='text' onChange={this.onAddInputChanged} placeholder='Search Recipe' />
+				<input className='form-control col-md-8' id='search-box' type='text' ref={ref => this.recipeNameInput = ref} onChange={this.onAddInputChanged} placeholder='Search Recipe' />
 				<input className='btn btn-default' id='search-btn' type='submit' onClick={this.onAddSubmit} />
 			</form>
 			<div className='recipe-list'>
 				{this.state.recipeList}
 			</div>
 		</div>
-		)
+		);
 	}
 }
 	

@@ -1,28 +1,28 @@
-import actions from '../actions/index';
+import * as actions from '../actions/index';
 
-const reducer = (state={}, action => {
+const initialRecipeState = [];
 
-	switch(action.type){
-
-		case actions.GET_SEARCH_SUCCESS:
-		const searchState = Object.assign({}, state, {
-			results: action.results
-		});
-		return searchState;
-
-		case actions.GET_SEARCH_ERROR:
-		const searchStateError = Object.assign({}, state, {
-			error: action.error
-		});
-		return searchStateError;
-
-		case actions.STORE_RECIPE:
-		const recipeState = Object.assign({}, state, {
-			recipe: action.recipe
-		});
-		return recipeState;
+export const recipeReducer = (state=initialRecipeState, action) => {
+	if(action.type === actions.ADD_RECIPE){
+		return [...state, {
+			name: action.recipe,
+			null
+		}];
 	}
-	return state;
-}
+	else if (action.type === action.RATE_RECIPE){
+		const index = state.findIndex(recipe =>
+			recipe.name === action.recipe
+			);
 
-exports.searchReducer = reducer;
+		if (index === -1){
+			throw new Error('Could not find recipe');
+		}
+
+		const before = state.slice(0, index);
+		const after = state.slice(index + 1);
+		const newRecipe = Object.assign({}, state[index], {rating: action.rating});
+		return [...before, newRecipe, ...after];
+	}
+	
+	return state;
+};
